@@ -1,0 +1,25 @@
+<mat-tab-group>
+  <mat-tab *ngFor="let category of (categories$ | async)" [label]="category.label">
+    <h1>{{category.label}}</h1>
+    <div class="card-list">
+      <ng-container *ngFor="let course of (courses$ | async)">
+        <ng-container *ngIf="course.category == category.key">
+          <mat-card class="card-list-item">
+            <div class="card-img-container">
+              <img mat-card-image [src]="course.imageUrl" alt="Course Image">
+            </div>
+            <mat-card-header class="card-title">
+              <mat-card-title>{{course.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{course.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-flat-button color="primary">ADD TO CART</button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+      </ng-container>
+    </div>
+  </mat-tab>
+</mat-tab-group>

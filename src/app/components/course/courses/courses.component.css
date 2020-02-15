@@ -1,0 +1,36 @@
+h1 {
+  margin-left: 50px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-list > .card-list-item {
+  display: flex;
+  flex-direction: column;
+  width: 19%;
+  margin: 20px;
+}
+
+.card-title {
+  margin-left: -16px;
+}
+
+.card-img-container {
+  width: 60%;
+  margin-top: 16px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  padding-top: 16px;
+  margin-left: 35%;
+}
+
+button {
+  margin-left: 10px;
+  margin-bottom: 16px;
+}
