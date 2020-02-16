@@ -9,7 +9,7 @@
     <a *ngIf="isAuth" mat-button [matMenuTriggerFor]="dropdownMenu">Profile</a>
     <mat-menu #dropdownMenu="matMenu">
       <button mat-menu-item routerLink="/orders">Orders</button>
-      <button mat-menu-item routerLink="/admin/courses">Admin Courses</button>
+      <button *ngIf="isAdmin" mat-menu-item routerLink="/admin/courses">Admin Courses</button>
       <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
     <a *ngIf="!isAuth" mat-button routerLink="/register">Register</a>

@@ -10,6 +10,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { GuestGuard } from './core/guards/guest.guard';
 import { OrdersComponent } from './components/order/orders/orders/orders.component';
 import { AdminCoursesComponent } from './components/admin/courses/admin-courses/admin-courses.component';
+import { AdminGuard } from './core/guards/admin.guard';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
-  { path: 'admin/courses', component: AdminCoursesComponent, canActivate: [AuthGuard] },
+  { path: 'admin/courses', component: AdminCoursesComponent, canActivate: [AuthGuard, AdminGuard] },
 ];
 
 @NgModule({
