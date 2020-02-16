@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminCoursesComponent } from './courses/admin-courses/admin-courses.component';
+import { MaterialModule } from 'src/app/core/material/material.module';
 
 
 
@@ -9,7 +10,8 @@ import { AdminCoursesComponent } from './courses/admin-courses/admin-courses.com
     AdminCoursesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   exports: [
     AdminCoursesComponent
