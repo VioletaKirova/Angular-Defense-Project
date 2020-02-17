@@ -27,8 +27,8 @@ export class RegisterComponent implements OnInit {
   }
 
   confirmPasswords(frm: FormGroup) {
-  // tslint:disable-next-line: no-string-literal
-  return frm.controls['password'].value === frm.controls['rePassword'].value ? null : {mismatch: true};
+    // tslint:disable-next-line: no-string-literal
+    return frm.controls['password'].value === frm.controls['rePassword'].value ? null : { mismatch: true };
   }
 
   register() {

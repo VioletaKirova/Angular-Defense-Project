@@ -1,0 +1,48 @@
+<h1 *ngIf="course">Edit {{course.title}} Course</h1>
+<form
+    *ngIf="form"
+    (ngSubmit)="editCourse()" 
+    [formGroup]="form">
+  <div class="field-container">
+    <mat-form-field appearance="outline">
+      <input formControlName="title" matInput type="text" placeholder="Course title...">
+      <mat-hint>Enter a valid course title.</mat-hint>
+      <mat-error *ngIf="form.get('title').hasError('required')">Title is required.</mat-error>
+      <mat-error *ngIf="form.get('title').hasError('minlength')">Title must be at least 6 characters long.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="outline">
+      <textarea formControlName="description" matInput matTextareaAutosize matAutosizeMinRows=4 placeholder="Course description..."></textarea>
+      <mat-hint>Enter a valid course description.</mat-hint>
+      <mat-error *ngIf="form.get('description').hasError('required')">Description is required.</mat-error>
+      <mat-error *ngIf="form.get('description').hasError('minlength')">Description must be at least 10 characters long.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="outline">
+      <input formControlName="imageUrl" matInput type="text" placeholder="Course image URL...">
+      <mat-hint>Enter a valid course image URL.</mat-hint>
+      <mat-error *ngIf="form.get('imageUrl').hasError('required')">Image URL is required.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="outline">
+      <input formControlName="price" matInput type="number" placeholder="Course price...">
+      <mat-hint>Enter a valid course price.</mat-hint>
+      <mat-error *ngIf="form.get('price').hasError('required')">Price is required.</mat-error>
+      <mat-error *ngIf="form.get('price').hasError('min')">Price must be at least 10$.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="category">
+        <mat-option>-- Choose a category --</mat-option>
+        <mat-option *ngFor="let category of (categories$ | async)" [value]="category.key">{{category.label}}</mat-option>
+      </mat-select>
+      <mat-hint>Choose a course category.</mat-hint>
+      <mat-error *ngIf="form.get('category').hasError('required')">Category is required.</mat-error>
+    </mat-form-field>
+  </div>
+  <button [disabled]="form.invalid" mat-raised-button type="submit" color="primary">Add Course</button>
+</form>

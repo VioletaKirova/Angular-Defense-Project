@@ -9,8 +9,10 @@ import { AboutComponent } from './components/general/about/about.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { GuestGuard } from './core/guards/guest.guard';
 import { OrdersComponent } from './components/order/orders/orders/orders.component';
-import { AdminCoursesComponent } from './components/admin/courses/admin-courses/admin-courses.component';
+import { AdminCoursesComponent } from './components/admin/courses/admin-courses.component';
 import { AdminGuard } from './core/guards/admin.guard';
+import { CreateCourseComponent } from './components/admin/course/create-course.component';
+import { EditCourseComponent } from './components/admin/edit-course/edit-course.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'admin/courses', component: AdminCoursesComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin/course/create', component: CreateCourseComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin/course/:id/edit', component: EditCourseComponent, canActivate: [AuthGuard, AdminGuard] },
 ];
 
 @NgModule({
