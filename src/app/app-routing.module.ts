@@ -11,7 +11,7 @@ import { GuestGuard } from './core/guards/guest.guard';
 import { OrdersComponent } from './components/order/orders/orders/orders.component';
 import { AdminCoursesComponent } from './components/admin/courses/admin-courses.component';
 import { AdminGuard } from './core/guards/admin.guard';
-import { CreateCourseComponent } from './components/admin/course/create-course.component';
+import { CreateCourseComponent } from './components/admin/create-course/create-course.component';
 import { EditCourseComponent } from './components/admin/edit-course/edit-course.component';
 
 

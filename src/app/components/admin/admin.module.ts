@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminCoursesComponent } from './courses/admin-courses.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
-import { CreateCourseComponent } from './course/create-course.component';
+import { CreateCourseComponent } from './create-course/create-course.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 
