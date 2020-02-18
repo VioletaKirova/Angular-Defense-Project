@@ -1,4 +1,5 @@
 export interface Course {
+  key?: string;
   id: string;
   title: string;
   description: string;

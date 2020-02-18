@@ -23,14 +23,14 @@ export class AdminCoursesComponent implements OnInit {
     this.courses$ = this.courseService.getAll();
   }
 
-  editCourse(data) {
-    const id = data.key;
+  editCourse(course) {
+    const id = course.key;
     this.router.navigate(['/admin/course', id, 'edit']);
   }
 
-  deleteCourse(data) {
+  deleteCourse(course) {
     if (window.confirm('Are you sure you want to delete the course?')) {
-      const id = data.key;
+      const id = course.key;
       this.courseService.delete(id);
     }
   }

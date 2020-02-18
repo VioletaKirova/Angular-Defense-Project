@@ -8,9 +8,6 @@
 
 <table mat-table [dataSource]="courses$ | async" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
   <!-- Title Column -->
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef> Title </th>
@@ -38,11 +35,11 @@
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
-    <td mat-cell class="cell-xs" *matCellDef="let data">
-      <button mat-icon-button matTooltip="Click to Edit" (click)="editCourse(data)">
+    <td mat-cell class="cell-xs" *matCellDef="let course">
+      <button mat-icon-button matTooltip="Click to Edit" (click)="editCourse(course)">
         <mat-icon class="edit-icon" aria-label="Edit">edit</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="Click to Delete" (click)="deleteCourse(data)">
+      <button mat-icon-button matTooltip="Click to Delete" (click)="deleteCourse(course)">
         <mat-icon class="delete-icon" aria-label="Delete">delete</mat-icon>
       </button>
     </td>

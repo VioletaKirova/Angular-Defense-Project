@@ -15,8 +15,11 @@
               <p>{{course.description}}</p>
               <span>{{course.price | currency}}</span>
             </mat-card-content>
-            <mat-card-actions>
+            <mat-card-actions *ngIf="!shoppingCartCourses || !courseIsAddedToCart(shoppingCartCourses, course.key)">
               <button mat-flat-button color="primary" (click)="addToCart(course)">ADD TO CART</button>
+            </mat-card-actions>
+            <mat-card-actions *ngIf="!shoppingCartCourses || courseIsAddedToCart(shoppingCartCourses, course.key)">
+              <button mat-flat-button class="remove-from-cart-btn" (click)="removeFromCart(course.key)">REMOVE FROM CART</button>
             </mat-card-actions>
           </mat-card>
         </ng-container>

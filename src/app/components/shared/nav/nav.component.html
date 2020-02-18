@@ -14,7 +14,7 @@
       </mat-menu>
       <a *ngIf="!isAuth" mat-button routerLink="/register">Register</a>
       <a *ngIf="!isAuth"  mat-button routerLink="/login">Login</a>
-      <a mat-button>0 <i class="material-icons">shopping_cart</i></a>
+      <a mat-button (click)="goToShoppingCart()">{{numberOfAddedCourses}} <i class="material-icons">shopping_cart</i></a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -13,6 +13,7 @@ import { AdminCoursesComponent } from './components/admin/courses/admin-courses.
 import { AdminGuard } from './core/guards/admin.guard';
 import { CreateCourseComponent } from './components/admin/create-course/create-course.component';
 import { EditCourseComponent } from './components/admin/edit-course/edit-course.component';
+import { ShoppingCartComponent } from './components/general/shopping-cart/shopping-cart.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'admin/courses', component: AdminCoursesComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/course/create', component: CreateCourseComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/course/:id/edit', component: EditCourseComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'cart', component: ShoppingCartComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

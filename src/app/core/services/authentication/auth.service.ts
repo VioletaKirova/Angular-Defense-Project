@@ -24,11 +24,11 @@ export class AuthService {
   ) { }
 
   get isAuthenticated() {
-    return this._isAuth;
+    return this._isAuth || !!localStorage.getItem('email');
   }
 
   get isAdmin() {
-    return this._isAdmin;
+    return this._isAdmin || localStorage.getItem('role') === 'admin';
   }
 
   registerUser(email: string, password: string) {
@@ -57,6 +57,7 @@ export class AuthService {
         .pipe(map((user) => {
           if (user.role && user.role === 'admin') {
             this._isAdmin = true;
+            localStorage.setItem('role', 'admin');
           }
         }))
         .subscribe(() => {});
@@ -76,7 +77,8 @@ export class AuthService {
     this._isAuth = false;
     this._isAdmin = false;
 
-    localStorage.clear();
+    localStorage.removeItem('email');
+    localStorage.removeItem('role');
     this.router.navigate([ '/' ]);
   }
 }

@@ -40,3 +40,8 @@ button {
   margin-left: 10px;
   margin-bottom: 16px;
 }
+
+.remove-from-cart-btn {
+  color: white;
+  background-color: #FE413D;
+}
