@@ -17,7 +17,7 @@ import { EditCourseComponent } from './components/admin/edit-course/edit-course.
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'courses', component: CoursesComponent, canActivate: [AuthGuard] },
+  { path: 'courses', component: CoursesComponent },
   { path: 'register', component: RegisterComponent, canActivate: [GuestGuard] },
   { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
   { path: 'about', component: AboutComponent },

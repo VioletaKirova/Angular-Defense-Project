@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 import { Category } from 'src/app/core/models/category.interface';
 import { Course } from 'src/app/core/models/course.interface';
 import { CourseService } from 'src/app/core/services/course/course.service';
+import { ShoppingCartService } from 'src/app/core/services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-courses',
@@ -18,11 +19,16 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private shoppingCartService: ShoppingCartService,
     ) { }
 
   ngOnInit() {
     this.categories$ = this.categoryService.getAll();
     this.courses$ = this.courseService.getAll();
+  }
+
+  addToCart(course) {
+    this.shoppingCartService.add(course);
   }
 }

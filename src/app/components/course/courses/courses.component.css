@@ -31,6 +31,11 @@ img {
   margin-left: 35%;
 }
 
+span {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
 button {
   margin-left: 10px;
   margin-bottom: 16px;

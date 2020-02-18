@@ -1,4 +1,8 @@
 .mat-toolbar-row{
-  margin: 0 6%;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-toolbar-row div {
+  margin: 0 4%;
 }
