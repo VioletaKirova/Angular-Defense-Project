@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Category } from '../../models/category.interface';
 
 @Injectable({

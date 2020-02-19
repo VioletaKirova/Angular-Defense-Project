@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-
-import { AuthService } from '../authentication/auth.service';
 import { Router } from '@angular/router';
-import { map, take } from 'rxjs/operators';
+
 import { Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+import { AuthService } from '../authentication/auth.service';
 import { Course } from '../../models/course.interface';
 
 @Injectable({
@@ -71,5 +71,10 @@ export class ShoppingCartService {
   remove(courseId) {
     const cartId = localStorage.getItem('cartId');
     return this.db.object('/shopping-cart/' + cartId + '/courses/' + courseId).remove();
+  }
+
+  clear() {
+    const cartId = localStorage.getItem('cartId');
+    this.db.object('/shopping-cart/' + cartId).remove();
   }
 }

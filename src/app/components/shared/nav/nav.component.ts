@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-
-import { AuthService } from 'src/app/core/services/authentication/auth.service';
-import { ShoppingCartService } from 'src/app/core/services/shopping-cart/shopping-cart.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/core/services/authentication/auth.service';
+import { ShoppingCartService } from 'src/app/core/services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-nav',

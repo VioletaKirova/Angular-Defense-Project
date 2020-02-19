@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -16,7 +17,8 @@ import { MaterialModule } from 'src/app/core/material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   exports: [
     HomeComponent,

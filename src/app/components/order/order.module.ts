@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrdersComponent } from './orders/orders/orders.component';
+
+import { OrderComponent } from './order/order.component';
+import { MaterialModule } from 'src/app/core/material/material.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 
 
 @NgModule({
   declarations: [
-    OrdersComponent
+    OrderComponent,
+    OrderSuccessComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    AppRoutingModule
   ],
   exports: [
-    OrdersComponent
+    OrderComponent
   ]
 })
 export class OrderModule { }

@@ -3,6 +3,10 @@ h1 {
   margin-left: 50px;
 }
 
+.mat-tab-group {
+  margin-bottom: 60px;
+}
+
 .card-list {
   display: flex;
   flex-wrap: wrap;
@@ -44,4 +48,9 @@ button {
 .remove-from-cart-btn {
   color: white;
   background-color: #FE413D;
+}
+
+.accessible-btn {
+  color: white;
+  background-color: #80C904;
 }

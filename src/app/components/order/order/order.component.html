@@ -1,10 +1,10 @@
 <div class="admin-dash-header">
-  <h1>Shopping Cart</h1>
-  <h4>Added Courses</h4>
+  <h1>Order</h1>
+  <h4>Check Out</h4>
 </div>
 
-<div class="container" *ngIf="shoppingCartCourses && shoppingCartCourses.length > 0">
-  <table mat-table [dataSource]="shoppingCartCourses" class="mat-elevation-z8">
+<div class="container" *ngIf="order && order.length > 0">
+  <table mat-table [dataSource]="order" class="mat-elevation-z8">
 
     <!-- Title Column -->
     <ng-container matColumnDef="title">
@@ -24,16 +24,6 @@
       <td mat-cell class="cell-xs" *matCellDef="let element"> {{element.price | currency}} </td>
     </ng-container>
   
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell class="cell-xs" *matCellDef="let course">
-        <button mat-icon-button matTooltip="Click to remove from cart" (click)="removeFromCart(course)">
-          <mat-icon class="delete-icon" aria-label="Delete">close</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
@@ -43,8 +33,8 @@
       <mat-card-title>Total:&nbsp;<span>{{totalPrice | currency}}</span></mat-card-title>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/order">CHECK OUT</button>
+      <button mat-raised-button class="cancel-btn" routerLink="/cart">CANCEL</button>
+      <button mat-raised-button class="finish-btn" color="primary" (click)="finish()">FINISH ORDER</button>
     </mat-card-actions>
   </mat-card>
 </div>
-<span class="empty-cart-span" *ngIf="!shoppingCartCourses || shoppingCartCourses.length === 0">Shopping Cart is empty!</span>
