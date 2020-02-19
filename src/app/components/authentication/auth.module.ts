@@ -5,6 +5,7 @@ import { ReactiveFormsModule  } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { MaterialModule } from 'src/app/core/material/material.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ]
 })
 export class AuthModule { }
