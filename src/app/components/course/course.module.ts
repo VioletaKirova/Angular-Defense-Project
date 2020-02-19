@@ -4,14 +4,19 @@ import { CommonModule } from '@angular/common';
 import { CoursesComponent } from './courses/courses.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { CourseRoutingModule } from './course-routing.module';
 
 
 
 @NgModule({
-  declarations: [CoursesComponent, CourseDetailsComponent],
+  declarations: [
+    CoursesComponent,
+    CourseDetailsComponent
+  ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    CourseRoutingModule
   ]
 })
 export class CourseModule { }

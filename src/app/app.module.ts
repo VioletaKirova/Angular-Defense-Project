@@ -10,11 +10,8 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { MaterialModule } from './core/material/material.module';
 import { SharedModule } from './components/shared/shared.module';
-import { AuthModule } from './components/authentication/auth.module';
-import { AdminModule } from './components/admin/admin.module';
-import { CourseModule } from './components/course/course.module';
 import { GeneralModule } from './components/general/general.module';
-import { OrderModule } from './components/order/order.module';
+import { AuthModule } from './components/authentication/auth.module';
 
 @NgModule({
   declarations: [
@@ -31,9 +28,6 @@ import { OrderModule } from './components/order/order.module';
     SharedModule,
     GeneralModule,
     AuthModule,
-    AdminModule,
-    CourseModule,
-    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
