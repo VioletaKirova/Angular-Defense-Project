@@ -25,8 +25,8 @@ export class CourseService {
       }))));
   }
 
-  getById(id: string) {
-    return this.db.object('/courses/' + id)
+  getById(id: string): Observable<Course> {
+    return this.db.object<Course>('/courses/' + id)
       .snapshotChanges()
       .pipe(map((c) => {
         const value: any = c.payload.val();

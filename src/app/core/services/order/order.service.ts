@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Order } from '../../models/order.interface';
+import { Course } from '../../models/course.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class OrderService {
     return this.db.list('/orders/').push(order);
   }
 
-  getOrderIdsByUserEmail(userEmail) {
+  getOrderIdsByUserEmail(userEmail): Observable<string[]> {
     return this.db.list('/orders/', r => r.orderByChild('user').equalTo(userEmail))
       .snapshotChanges()
       .pipe(map((orders) => {
@@ -23,8 +25,8 @@ export class OrderService {
       }));
   }
 
-  getCoursesByOrderId(orderId) {
-    return this.db.object('/orders/' + orderId + '/courses/')
+  getCoursesByOrderId(orderId): Observable<Course[]> {
+    return this.db.object<Course[]>('/orders/' + orderId + '/courses/')
       .snapshotChanges()
       .pipe(map((courses) => {
         return courses.payload.val();

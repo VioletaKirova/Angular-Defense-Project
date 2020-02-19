@@ -22,11 +22,11 @@ export class CoursesComponent implements OnInit, OnDestroy {
   categories$: Observable<Category[]>;
   courses$: Observable<Course[]>;
   shoppingCartCoursesSub: Subscription;
-  shoppingCartCourses: any[];
+  shoppingCartCourses: Course[];
   userOrdersSub: Subscription;
   userCoursesSub: Subscription;
   currentCourse: Course;
-  userCourses: any[];
+  userCourses: Course[];
 
   constructor(
     private categoryService: CategoryService,

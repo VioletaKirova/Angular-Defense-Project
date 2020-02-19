@@ -44,9 +44,9 @@ export class ShoppingCartService {
       });
   }
 
-  getCourses() {
+  getCourses(): Observable<Course[]> {
     const cartId = localStorage.getItem('cartId');
-    return this.db.list('/shopping-cart/' + cartId + '/courses/')
+    return this.db.list<Course>('/shopping-cart/' + cartId + '/courses/')
       .snapshotChanges()
       .pipe(map((courses) =>
         courses.map((course) => ({
@@ -58,7 +58,7 @@ export class ShoppingCartService {
 
   getMappedCourses(): Observable<Course[]> {
     const cartId = localStorage.getItem('cartId');
-    return this.db.list('/shopping-cart/' + cartId + '/courses/')
+    return this.db.list<Course>('/shopping-cart/' + cartId + '/courses/')
       .snapshotChanges()
       .pipe(map((courses) =>
         courses.map((course) => ({
