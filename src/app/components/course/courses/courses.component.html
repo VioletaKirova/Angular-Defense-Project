@@ -18,10 +18,10 @@
             <mat-card-actions *ngIf="(!shoppingCartCourses || !courseIsAddedToCart(course.key)) && (!userCourses || !courseIsAccessible(course.key))">
               <button mat-flat-button color="primary" (click)="addToCart(course)">ADD TO CART</button>
             </mat-card-actions>
-            <mat-card-actions *ngIf="(!shoppingCartCourses || courseIsAddedToCart(course.key)) && (userCourses && !courseIsAccessible(course.key))">
+            <mat-card-actions *ngIf="shoppingCartCourses && courseIsAddedToCart(course.key)">
               <button mat-flat-button class="remove-from-cart-btn" (click)="removeFromCart(course.key)">REMOVE FROM CART</button>
             </mat-card-actions>
-            <mat-card-actions *ngIf="userCourses && courseIsAccessible(course.key)">
+            <mat-card-actions *ngIf="userCourses && courseIsAccessible(course.key) && !courseIsAddedToCart(course.key)">
               <button mat-flat-button class="accessible-btn" (click)="access(course.key)">ENTER COURSE</button>
             </mat-card-actions>
           </mat-card>

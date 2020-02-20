@@ -75,11 +75,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   }
 
   addToCart(course) {
-    if (!this.authService.isAuthenticated) {
-      this.router.navigate(['/login']);
-    } else {
-      this.shoppingCartService.add(course);
-    }
+    this.shoppingCartService.add(course);
   }
 
   courseIsAddedToCart(courseId) {
