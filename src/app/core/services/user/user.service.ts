@@ -16,9 +16,11 @@ export class UserService {
   ) { }
 
   setUser(user: firebase.User) {
-    this.db.object('/users/' + user.uid).update({
-      email: user.email
-    });
+    if (user) {
+      this.db.object('/users/' + user.uid).update({
+        email: user.email
+      });
+    }
   }
 
   getUserByUid(uid: string) {
