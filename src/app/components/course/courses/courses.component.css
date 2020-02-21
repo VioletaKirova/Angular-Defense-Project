@@ -54,3 +54,9 @@ button {
   color: white;
   background-color: #80C904;
 }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16%;
+}

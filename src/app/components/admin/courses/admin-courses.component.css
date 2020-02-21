@@ -46,3 +46,9 @@ table {
 .delete-icon {
   color: #FE413D;
 }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16%;
+}

@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group *ngIf="(categories$ | async); else loader">
   <mat-tab *ngFor="let category of (categories$ | async)" [label]="category.label">
     <h1>{{category.label}}</h1>
     <div class="card-list">
@@ -30,3 +30,8 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+<ng-template #loader>
+  <div class="loader-container">
+    <mat-progress-spinner color="primary" mode="indeterminate" ></mat-progress-spinner>
+  </div>
+</ng-template>
