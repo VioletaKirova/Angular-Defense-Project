@@ -1,12 +1,29 @@
-img {
-  width: 100%;
-  height: auto;
+.hero {
+  display: flex;
+  justify-content: space-between;
 }
 
 .hero-text {
-  position: absolute;
-  top: 35%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+  padding-top: 10%;
   color: #3F51B5;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+button {
+  font-size: 1.1em;
+  padding: 8px 20px;
+  margin-top: -10px;
+}
+
+img {
+  width: 60%;
+  height: auto;
+  padding-top: 60px;
 }
