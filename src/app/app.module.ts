@@ -4,6 +4,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MaterialModule } from './core/material/material.module';
 import { SharedModule } from './components/shared/shared.module';
 import { GeneralModule } from './components/general/general.module';
 import { AuthModule } from './components/authentication/auth.module';
+import { ErrorHandlerInterceptorService } from './core/interceptors/error-handler-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AuthModule } from './components/authentication/auth.module';
     GeneralModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
